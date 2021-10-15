@@ -6,4 +6,5 @@ RUN BUILD_PACKAGES="libffi-dev libssl-dev gcc" \
     && apt update && apt-get install -y openssh-client sshpass $BUILD_PACKAGES \
     && python -m pip --no-cache-dir install ansible \
     && apt-get purge -y $BUILD_PACKAGES \
+    && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
